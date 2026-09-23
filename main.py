@@ -60,8 +60,8 @@ async def analyze_board(
             "\"while accurately calculating value and read speed when the board is safe.\\n\\n\"\n\n"
 
             "\"🚨【LIVE RIICHI MILITARY STATUS / 实时立直军情】🚨\\n\"\n"
-            f"\"- Current declared Riichi opponents: {{riichi_status_string}}\\n\"\n"
-            f"\"- riichi_upstream = {{riichi_upstream}}, riichi_downstream = {{riichi_downstream}}, riichi_opposite = {{riichi_opposite}}\\n\\n\"\n\n"
+            f"\"- Current declared Riichi opponents: {riichi_status_string}\\n\"\n"
+            f"\"- riichi_upstream = {riichi_upstream}, riichi_downstream = {riichi_downstream}, riichi_opposite = {riichi_opposite}\\n\\n\"\n\n"
 
             "\"📝【INPUT IMAGES】\\n\"\n"
             "\"1. Image 1: My EXACT current hand tiles. Your `discard_tile` MUST be chosen from these tiles only! No hallucinations!\\n\"\n"
@@ -93,7 +93,7 @@ async def analyze_board(
             "\"   - Reverse Order Discard (逆切): If they discard 5 then 4, or 7 then 6 in early turns, they have a surplus of connected blocks, meaning they are incredibly fast.\\n\\n\"\n\n"
 
             "\"🧠【STEP 3: DEFENSIVE TACTICS & SAFETY RANKING (铁壁防守算法)】\\n\"\n"
-            "\"If any opponent declares Riichi (立立棒 extended), or it is Turn 7+ and your hand is slow/bad, you MUST enter FULL DEFENSE MODE (`is_defense_mode = true`).\\n\\n\"\n"
+            "\"If any opponent declares Riichi (立直棒 extended), or it is Turn 7+ and your hand is slow/bad, you MUST enter FULL DEFENSE MODE (`is_defense_mode = true`).\\n\\n\"\n"
             "\"🚨🚨🚨 STATED DISCARD RIVER OWNERSHIP RULES (牌河绝对归属铁律) 🚨🚨🚨\\n\"\n"
             "\"When tracking Genbutsu (现物), you MUST strictly isolate tile ownership based on spatial position in Image 2:\\n\"\n"
             "\"1. THE BOTTOM RIVER IS YOUR OWN RIVER! Tiles in the bottom river were discarded by YOU. They are NEVER Genbutsu (现物) for any opponent! Do NOT recommend a tile just because you see it in the bottom river!\\n\"\n"
@@ -111,7 +111,7 @@ async def analyze_board(
 
             "\"🎯【FINAL ARBITRATION】\\n\"\n"
             "\"Output the optimal `discard_tile` using standard notation ('1m', '5p', '7s', '东', '南', '西', '北', '白', '发', '中'). \"\n"
-            "\"In the `thinking` field, provide a concise tactical breakdown IN CHINESE explaining:\\n\"\n"
+            "\"In the `thinking` field, provide a concise tactical breakdown IN ENGLISH explaining:\\n\"\n"
             "\"1) Your dynamic Dora calculation and its visibility count.\\n\"\n"
             "\"2) What you read from opponents' early discard order (speed/shape).\\n\"\n"
             "\"3) Your explicit defensive justification (e.g., '打现物', '利用X筋牌', '依据X为壁牌防守').\\n\"\n"
