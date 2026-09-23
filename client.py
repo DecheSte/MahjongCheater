@@ -231,13 +231,11 @@ import numpy as np
 
 
 def mouse_click_callback(event, x, y, flags, param):
-    """鼠标点击事件回调，用来记录精准像素坐标"""
     if event == cv2.EVENT_LBUTTONDOWN:
         print(f"点击位置绝对坐标: X={x}, Y={y} | 相对比例: X_ratio={x / param[0]:.3f}, Y_ratio={y / param[1]:.3f}")
 
 
 def start_pixel_finder(img_center):
-    """防卡死升级版：取点启动器"""
     # 将 Pillow 图片转为 OpenCV 的 BGR 格式
     open_cv_image = np.array(img_center.convert("RGB"))[:, :, ::-1]
 
