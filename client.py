@@ -12,9 +12,6 @@ is_analyzing = False
 
 
 def show_overlay(thinking, discard_tile, should_call, is_defense):
-    """
-    🌟 升级版：加长加宽的高容积率科技感半透明悬浮窗
-    """
 
     def create_window():
         root = tk.Tk()
@@ -30,7 +27,7 @@ def show_overlay(thinking, discard_tile, should_call, is_defense):
         root.geometry(f"420x280+{screen_width - 470}+50")
 
         #头部横幅
-        title_text = "AI 警报：全力防守兜牌！" if is_defense else "AI 雀圣战术完全体小抄"
+        title_text = "AI 警报：全力防守兜牌！" if is_defense else "AI雀圣小抄"
         tk.Label(root, text=title_text, font=("Microsoft YaHei", 12, "bold"), fg="#4fd1c5", bg=bg_color).pack(pady=6)
 
         #核心推荐
@@ -76,7 +73,7 @@ def capture_and_analyze():
     if is_analyzing: return
     is_analyzing = True
 
-    print("\n⚡ [F8] 触发成功！正在后台剥离窗口并极限压缩图片...")
+    print("\n[F8] 触发成功！正在后台剥离窗口并极限压缩图片...")
     try:
         # 模糊定位游戏窗口
         game_windows = [w for w in gw.getAllWindows() if
